@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="450.0" prefWidth="350.0" style="-fx-background-color: white;" stylesheets="@../../css/btn_hover.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="icet.edu.erp.controller.user.LoginFormController">
+   <children>
+      <Label layoutX="67.0" layoutY="92.0" text="Welcome Back">
+         <font>
+            <Font name="Poppins SemiBold" size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="111.0" layoutY="135.0" text="Glad to see you again" textFill="#969090">
+         <font>
+            <Font name="Poppins Regular" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="89.0" layoutY="156.0" text="Login to your account bellow" textFill="#969090">
+         <font>
+            <Font name="Poppins Regular" size="12.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="76.0" fitWidth="80.0" layoutX="137.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../img/logo_icon.png" />
+         </image>
+      </ImageView>
+      <VBox layoutX="38.0" layoutY="203.0" prefHeight="139.0" prefWidth="242.0" spacing="30.0">
+         <children>
+            <VBox>
+               <children>
+                  <Label text="Email" textFill="#969090">
+                     <font>
+                        <Font name="Poppins Regular" size="12.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="txtEmail" focusColor="#1230ae">
+                     <font>
+                        <Font name="Poppins Medium" size="14.0" />
+                     </font>
+                  </JFXTextField>
+               </children>
+            </VBox>
+            <VBox layoutX="10.0" layoutY="10.0">
+               <children>
+                  <Label text="Password" textFill="#969090">
+                     <font>
+                        <Font name="Poppins Regular" size="12.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="txtPassword" focusColor="#1230ae" prefHeight="30.0" prefWidth="237.0" visible="false">
+                     <font>
+                        <Font name="Poppins Medium" size="14.0" />
+                     </font>
+                  </JFXTextField>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+      <JFXButton layoutX="75.0" layoutY="367.0" onAction="#btnLoginOnAction" prefHeight="35.0" prefWidth="200.0" style="-fx-background-color: #1230AE;" text="Login" textFill="WHITE">
+         <font>
+            <Font name="Poppins Medium" size="14.0" />
+         </font>
+      </JFXButton>
+      <Label layoutX="123.0" layoutY="411.0" onMouseClicked="#lblForgotPasswordOnClick" text="Forgot password?" textFill="#969090">
+         <font>
+            <Font name="Poppins Regular" size="12.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="imgPasswordToogle" fitHeight="20.0" fitWidth="20.0" layoutX="291.0" layoutY="305.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../img/show_password.png" />
+         </image>
+      </ImageView>
+      <JFXButton fx:id="btnPasswordImgToggle" layoutX="287.0" layoutY="301.0" prefHeight="28.0" prefWidth="28.0" text=" " />
+      <JFXPasswordField fx:id="pwdPassword" layoutX="39.0" layoutY="302.0" prefHeight="26.0" prefWidth="241.0" />
+   </children>
+</AnchorPane>

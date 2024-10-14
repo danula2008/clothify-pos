@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="450.0" prefWidth="350.0" style="-fx-background-color: white;" stylesheets="@../../css/btn_hover.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="icet.edu.erp.controller.user.OtpFormController">
+   <children>
+      <Label layoutX="55.0" layoutY="90.0" text="OTP Verification">
+         <font>
+            <Font name="Poppins SemiBold" size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="116.0" layoutY="154.0" text="We have mailed to:" textFill="#969090">
+         <font>
+            <Font name="Poppins Regular" size="12.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="76.0" fitWidth="80.0" layoutX="137.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../img/logo_icon.png" />
+         </image>
+      </ImageView>
+      <JFXButton fx:id="btnDone" layoutX="75.0" layoutY="367.0" onAction="#btnDoneOnAction" prefHeight="35.0" prefWidth="200.0" style="-fx-background-color: #1230AE;" text="Done" textFill="WHITE">
+         <font>
+            <Font name="Poppins Medium" size="14.0" />
+         </font>
+      </JFXButton>
+      <HBox layoutX="45.0" layoutY="258.0" prefHeight="35.0" prefWidth="262.0" spacing="10.0">
+         <children>
+            <JFXTextField fx:id="txtOtpChar1" alignment="CENTER" focusColor="#1230ae" prefColumnCount="1" prefHeight="26.0" prefWidth="35.0">
+               <font>
+                  <Font name="Poppins Medium" size="18.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="txtOtpChar2" alignment="CENTER" focusColor="#1230ae" layoutX="10.0" layoutY="10.0" prefColumnCount="1" prefHeight="26.0" prefWidth="35.0">
+               <font>
+                  <Font name="Poppins Medium" size="18.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="txtOtpChar3" alignment="CENTER" focusColor="#1230ae" layoutX="45.0" layoutY="10.0" prefColumnCount="1" prefHeight="26.0" prefWidth="35.0">
+               <font>
+                  <Font name="Poppins Medium" size="18.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="txtOtpChar4" alignment="CENTER" focusColor="#1230ae" layoutX="80.0" layoutY="10.0" prefColumnCount="1" prefHeight="26.0" prefWidth="35.0">
+               <font>
+                  <Font name="Poppins Medium" size="18.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="txtOtpChar5" alignment="CENTER" focusColor="#1230ae" layoutX="116.0" layoutY="10.0" prefColumnCount="1" prefHeight="26.0" prefWidth="35.0">
+               <font>
+                  <Font name="Poppins Medium" size="18.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="txtOtpChar6" alignment="CENTER" focusColor="#1230ae" layoutX="151.0" layoutY="10.0" prefColumnCount="1" prefHeight="26.0" prefWidth="35.0">
+               <font>
+                  <Font name="Poppins Medium" size="18.0" />
+               </font>
+            </JFXTextField>
+         </children>
+      </HBox>
+      <Label fx:id="lblEmailAddress" alignment="TOP_CENTER" layoutX="22.0" layoutY="178.0" prefHeight="18.0" prefWidth="306.0" text="danusathmin@gmail.com" textFill="#969090">
+         <font>
+            <Font name="Poppins Regular" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="45.0" layoutY="240.0" text="Enter the OTP code:" textFill="#969090">
+         <font>
+            <Font name="Poppins Regular" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblCountdown" alignment="TOP_CENTER" layoutX="79.0" layoutY="312.0" prefHeight="18.0" prefWidth="194.0" text="Expires in: 2:00" textFill="#969090">
+         <font>
+            <Font name="Poppins Regular" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblInvalidOtp" alignment="TOP_CENTER" layoutX="79.0" layoutY="323.0" prefHeight="18.0" prefWidth="194.0" text="Invalid OTP Entered." textFill="RED" visible="false">
+         <font>
+            <Font name="Poppins Regular" size="14.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
