@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="545.0" prefWidth="400.0" style="-fx-background-color: white;" stylesheets="@../../css/btn_hover.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="icet.edu.erp.controller.inventory.AddInventoryFormController">
+   <children>
+      <Label fx:id="lblTitle" layoutX="145.0" layoutY="27.0" text="Add Inventory">
+         <font>
+            <Font name="Poppins SemiBold" size="24.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="78.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../img/logo_icon.png" />
+         </image>
+      </ImageView>
+      <VBox layoutX="63.0" layoutY="99.0" prefHeight="139.0" prefWidth="273.0" spacing="25.0">
+         <children>
+            <VBox layoutX="10.0" layoutY="312.0" prefWidth="243.0">
+               <children>
+                  <Label text="Enter product ID:" textFill="#969090">
+                     <font>
+                        <Font name="Poppins Regular" size="12.0" />
+                     </font>
+                  </Label>
+                  <HBox spacing="10.0">
+                     <children>
+                        <JFXTextField fx:id="txtProductId" focusColor="#1230ae" maxWidth="1.7976931348623157E308" prefHeight="30.0" prefWidth="196.0">
+                           <font>
+                              <Font name="Poppins Medium" size="14.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXButton fx:id="btnCheckProdId" onAction="#btnCheckProdIdOnAction" prefHeight="30.0" prefWidth="66.0" style="-fx-background-color: #6172cc;" text="Check" textFill="WHITE">
+                           <font>
+                              <Font name="Poppins Regular" size="12.0" />
+                           </font>
+                        </JFXButton>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox layoutX="10.0" layoutY="280.0" prefWidth="243.0">
+               <children>
+                  <Label text="Enter supplier ID:" textFill="#969090">
+                     <font>
+                        <Font name="Poppins Regular" size="12.0" />
+                     </font>
+                  </Label>
+                  <HBox spacing="10.0">
+                     <children>
+                        <JFXTextField fx:id="txtSupplierId" focusColor="#1230ae" maxWidth="1.7976931348623157E308" prefHeight="30.0" prefWidth="196.0">
+                           <font>
+                              <Font name="Poppins Medium" size="14.0" />
+                           </font>
+                        </JFXTextField>
+                        <JFXButton fx:id="btnSupId" onAction="#btnSupIdOnAction" prefHeight="30.0" prefWidth="66.0" style="-fx-background-color: #6172cc;" text="Check" textFill="WHITE">
+                           <font>
+                              <Font name="Poppins Regular" size="12.0" />
+                           </font>
+                        </JFXButton>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox layoutX="10.0" layoutY="350.0" prefWidth="243.0">
+               <children>
+                  <Label text="Enter inventory unit price:" textFill="#969090">
+                     <font>
+                        <Font name="Poppins Regular" size="12.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="txtInventoryUnitPrice" focusColor="#1230ae" maxWidth="1.7976931348623157E308" prefHeight="30.0" prefWidth="278.0">
+                     <font>
+                        <Font name="Poppins Medium" size="14.0" />
+                     </font>
+                  </JFXTextField>
+               </children>
+            </VBox>
+            <VBox layoutX="10.0" layoutY="149.0" prefWidth="243.0">
+               <children>
+                  <Label text="Enter selling unit price:" textFill="#969090">
+                     <font>
+                        <Font name="Poppins Regular" size="12.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="txtSellingUnitPrice" focusColor="#1230ae" maxWidth="1.7976931348623157E308" prefHeight="30.0" prefWidth="278.0">
+                     <font>
+                        <Font name="Poppins Medium" size="14.0" />
+                     </font>
+                  </JFXTextField>
+               </children>
+            </VBox>
+            <VBox layoutX="10.0" layoutY="219.0" prefWidth="243.0">
+               <children>
+                  <Label text="Enter quantity:" textFill="#969090">
+                     <font>
+                        <Font name="Poppins Regular" size="12.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="txtQty" focusColor="#1230ae" maxWidth="1.7976931348623157E308" prefHeight="30.0" prefWidth="278.0">
+                     <font>
+                        <Font name="Poppins Medium" size="14.0" />
+                     </font>
+                  </JFXTextField>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+      <JFXButton fx:id="btnDone" layoutX="106.0" layoutY="489.0" onAction="#btnDoneOnAction" prefHeight="35.0" prefWidth="200.0" style="-fx-background-color: #1230AE;" text="Add Employee" textFill="WHITE">
+         <font>
+            <Font name="Poppins Medium" size="14.0" />
+         </font>
+      </JFXButton>
+      <Label fx:id="lblErrorMsg" alignment="CENTER" layoutX="28.0" layoutY="455.0" prefHeight="19.0" prefWidth="344.0" textFill="RED" visible="false">
+         <font>
+            <Font name="Poppins Regular" size="13.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

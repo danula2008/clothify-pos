@@ -27,7 +27,7 @@
          <children>
             <VBox>
                <children>
-                  <Label text="Enter user's name:" textFill="#969090">
+                  <Label text="Enter name:" textFill="#969090">
                      <font>
                         <Font name="Poppins Regular" size="12.0" />
                      </font>
@@ -41,7 +41,7 @@
             </VBox>
             <VBox layoutX="10.0" layoutY="10.0">
                <children>
-                  <Label text="Enter user's email:" textFill="#969090">
+                  <Label text="Enter email:" textFill="#969090">
                      <font>
                         <Font name="Poppins Regular" size="12.0" />
                      </font>
@@ -83,7 +83,7 @@
             </VBox>
             <VBox layoutX="10.0" layoutY="243.0">
                <children>
-                  <Label text="Select the user's role:" textFill="#969090">
+                  <Label text="Select role:" textFill="#969090">
                      <font>
                         <Font name="Poppins Regular" size="12.0" />
                      </font>
