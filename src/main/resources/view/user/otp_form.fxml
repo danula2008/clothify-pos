@@ -75,11 +75,20 @@
             <Font name="Poppins Regular" size="12.0" />
          </font>
       </Label>
-      <Label fx:id="lblCountdown" alignment="TOP_CENTER" layoutX="79.0" layoutY="312.0" prefHeight="18.0" prefWidth="194.0" text="Expires in: 2:00" textFill="#969090">
-         <font>
-            <Font name="Poppins Regular" size="12.0" />
-         </font>
-      </Label>
+      <HBox layoutX="79.0" layoutY="312.0">
+         <children>
+            <Label alignment="TOP_RIGHT" prefHeight="18.0" prefWidth="110.0" text="Expires in :  " textAlignment="RIGHT" textFill="#969090">
+               <font>
+                  <Font name="Poppins Regular" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblCountdown" alignment="TOP_LEFT" prefHeight="18.0" prefWidth="110.0" text="5:00" textFill="#969090">
+               <font>
+                  <Font name="Poppins Regular" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
       <Label fx:id="lblInvalidOtp" alignment="TOP_CENTER" layoutX="79.0" layoutY="323.0" prefHeight="18.0" prefWidth="194.0" text="Invalid OTP Entered." textFill="RED" visible="false">
          <font>
             <Font name="Poppins Regular" size="14.0" />
