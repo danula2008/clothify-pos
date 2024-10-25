@@ -58,16 +58,18 @@ public class ProductDataFormController implements Initializable {
             return;
         }
 
+
+        Product product = new Product(
+                isAdd ? null : id,
+                txtName.getText(),
+                cmbCategory.getValue(),
+                txtBrand.getText(),
+                txtProductSize.getText(),
+                Double.parseDouble(txtDiscount.getText())
+        );
+
         try {
-            if (service.addProduct(new Product(
-                    isAdd ? null : id,
-                    txtName.getText(),
-                    cmbCategory.getValue(),
-                    txtBrand.getText(),
-                    txtProductSize.getText(),
-                    Double.parseDouble(txtDiscount.getText())
-                    )
-            )) {
+            if (isAdd? service.addProduct(product) : service.updateProduct(product)) {
                 ShowAlert.customAlert("Success", "Successfully updated the Database.\nPlease reload the table.", Alert.AlertType.INFORMATION);
 
                 if (isAdd) {

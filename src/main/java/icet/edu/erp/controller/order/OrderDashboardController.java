@@ -61,7 +61,7 @@ public class OrderDashboardController implements Initializable {
 
     private Order selectedData;
 
-    private final OrderService service = ServiceFactory.getInstance().getServiceType(ServiceType.SUPPLIER);
+    private final OrderService service = ServiceFactory.getInstance().getServiceType(ServiceType.ORDER);
 
 
     @FXML

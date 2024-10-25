@@ -60,7 +60,7 @@
                                     <Font name="Poppins SemiBold" size="14.0" />
                                  </font>
                               </JFXButton>
-                              <ImageView fitHeight="22.0" fitWidth="22.0" layoutX="15.0" layoutY="8.0" onMouseClicked="#btnEditOnMouseClick" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fitHeight="22.0" fitWidth="22.0" layoutX="15.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../../img/products.png" />
                                  </image>

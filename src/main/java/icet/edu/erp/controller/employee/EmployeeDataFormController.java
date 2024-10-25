@@ -54,7 +54,9 @@ public class EmployeeDataFormController implements Initializable {
 
     @FXML
     void btnCheckEmailOnAction(ActionEvent event) {
-        Employee employee = ((UserService)ServiceFactory.getInstance().getServiceType(ServiceType.USER)).getEmployee(txtUserEmail);
+        Employee employee = ((EmployeeService) ServiceFactory.getInstance().getServiceType(ServiceType.EMPLOYEE)).getEmployeeByUserId(
+                ((UserService)ServiceFactory.getInstance().getServiceType(ServiceType.USER)).getUserId(txtUserEmail.getText())
+        );
         ShowAlert.customAlert("User Search Result",
                     employee == null?
                             "Could not find a employee for the provided email address." :
@@ -75,16 +77,18 @@ public class EmployeeDataFormController implements Initializable {
             return;
         }
 
+        Employee employee = new Employee(
+                isAdd ? null : id,
+                userService.getId(txtUserEmail),
+                cmbGender.getValue(),
+                txtContact.getText(),
+                dateHireDate.getValue(),
+                dateBDay.getValue(),
+                Double.parseDouble(txtSalary.getText())
+        );
+
         try {
-            if (service.addEmployee(new Employee(
-                    isAdd ? null : id,
-                    userService.getId(txtUserEmail),
-                    cmbGender.getValue(),
-                    txtContact.getText(),
-                    dateHireDate.getValue(),
-                    dateBDay.getValue(),
-                    Double.parseDouble(txtSalary.getText())
-            ))) {
+            if (isAdd? service.addEmployee(employee) : service.updateEmployee(employee)) {
                 ShowAlert.customAlert("Success", "Successfully updated the Database.\nPlease reload the table.", Alert.AlertType.INFORMATION);
 
                 if (isAdd) {

@@ -10,4 +10,5 @@ public interface InventoryService extends SuperService {
     ObservableList<Inventory> getAllCustomers();
     boolean addInventory(Inventory inventory) throws SQLIntegrityConstraintViolationException;
     boolean deleteEmployee(Integer id);
+    boolean updateInventory(Inventory inventory) throws SQLIntegrityConstraintViolationException;
 }

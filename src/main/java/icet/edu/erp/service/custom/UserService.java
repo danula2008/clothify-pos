@@ -13,11 +13,10 @@ public interface UserService extends SuperService {
     boolean validateLogin(String email, String password);
     String sendOTP(String email);
     boolean isEmailInSystem(String text);
-    Integer getId(JFXTextField txtUserEmail);
-    Employee getEmployee(JFXTextField txtUserEmail);
+    Integer getUserId(String email);
     String getEmail(Integer userId);
     boolean deleteUser(Integer id);
     ObservableList<User> getAllCustomers();
     boolean addUser(User user) throws SQLIntegrityConstraintViolationException;
-    void updatePassword(Integer id, TextField textField);
+    boolean updatePassword(Integer id, String newPwd);
 }

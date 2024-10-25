@@ -5,22 +5,20 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import java.sql.Timestamp;
 
 @Entity
-@Table(name = "User")
+@Table(name = "Inventory")
 @Setter
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserEntity {
+public class InventoryEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private String name;
-    private String email;
-    private String password;
-    private String role;
-    private Timestamp lastLogin;
-    private Timestamp initialLogin;
+    private Integer productId;
+    private Integer supplierId;
+    private Double sellingPrice;
+    private Double inventoryPrice;
+    private Integer qtyOnHand;
 }

@@ -49,7 +49,10 @@ public class InventoryDataFormController {
 
     @FXML
     void btnCheckProdIdOnAction(ActionEvent event) {
-        Product product = productService.getProduct(txtProductId);
+        if (!txtProductId.getText().matches("^\\d+$")){
+            return;
+        }
+        Product product = productService.getProduct(Integer.parseInt(txtProductId.getText()));
         ShowAlert.customAlert("User Search Result",
                 product == null?
                         "Could not find a product for the provided email address." :
@@ -66,19 +69,21 @@ public class InventoryDataFormController {
 
     @FXML
     void btnDoneOnAction(ActionEvent event) {
-        if (!validate() || productService.getId(txtProductId)==-1 || supplierService.getId(txtSupplierId)==-1) {
+        if (!validate() || !productService.hasId(Integer.parseInt(txtProductId.getText())) || !supplierService.hasId(Integer.parseInt(txtSupplierId.getText()))) {
             return;
         }
 
+        Inventory inventory = new Inventory(
+                isAdd ? null : id,
+                Integer.parseInt(txtProductId.getText()),
+                Integer.parseInt(txtSupplierId.getText()),
+                Double.parseDouble(txtSellingUnitPrice.getText()),
+                Double.parseDouble(txtInventoryUnitPrice.getText()),
+                Integer.parseInt(txtQty.getText())
+        );
+
         try {
-            if (service.addInventory( new Inventory(
-                    isAdd ? null : id,
-                    productService.getId(txtProductId),
-                    supplierService.getId(txtSupplierId),
-                    Double.parseDouble(txtSellingUnitPrice.getText()),
-                    Double.parseDouble(txtInventoryUnitPrice.getText()),
-                    Integer.parseInt(txtQty.getText())
-            ))) {
+            if (isAdd? service.addInventory(inventory) : service.updateInventory(inventory)) {
                 ShowAlert.customAlert("Success", "Successfully updated the Database.\nPlease reload the table.", Alert.AlertType.INFORMATION);
 
                 if (isAdd) {
@@ -98,7 +103,11 @@ public class InventoryDataFormController {
 
     @FXML
     void btnSupIdOnAction(ActionEvent event) {
-        Supplier supplier = supplierService.getSupplier(txtProductId);
+        if (!txtSupplierId.getText().matches("^\\d+$")){
+            return;
+        }
+
+        Supplier supplier = supplierService.getSupplier(Integer.parseInt(txtSupplierId.getText()));
         ShowAlert.customAlert("User Search Result",
                 supplier == null?
                         "Could not find a product for the provided email address." :
@@ -127,6 +136,9 @@ public class InventoryDataFormController {
     }
 
     private boolean validate() {
+        if (!(txtProductId.getText().matches("^\\d+$") || txtSupplierId.getText().matches("^\\d+$"))){
+            return false;
+        }
         if (!txtSellingUnitPrice.getText().matches("^(\\d+(\\.\\d{1,2})?|\\.\\d{1,2})$")) {
             lblErrorMsg.setText("Selling Unit Price must be a positive number (up to 2 decimal places).");
             return false;

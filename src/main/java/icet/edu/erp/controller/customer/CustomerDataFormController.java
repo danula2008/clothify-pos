@@ -54,17 +54,19 @@ public class CustomerDataFormController implements Initializable {
             return;
         }
 
+        Customer customer = new Customer(
+                isAdd ? null : id,
+                txtName.getText(),
+                cmbGender.getValue(),
+                txtEmail.getText(),
+                txtContact.getText(),
+                dateDob.getValue(),
+                isAdd ? LocalDate.now() : service.getDate(id),
+                ""
+        );
+
         try {
-            if (service.addCustomer(new Customer(
-                    isAdd ? null : id,
-                    txtName.getText(),
-                    cmbGender.getValue(),
-                    txtEmail.getText(),
-                    txtContact.getText(),
-                    dateDob.getValue(),
-                    isAdd ? LocalDate.now() : service.getDate(id),
-                    ""
-            ))) {
+            if (isAdd? service.addCustomer(customer) : service.updateCustomer(customer)) {
                 ShowAlert.customAlert("Success", "Successfully updated the Database.\nPlease reload the table.", Alert.AlertType.INFORMATION);
 
                 if (isAdd) {

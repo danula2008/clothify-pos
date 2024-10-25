@@ -5,22 +5,24 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import java.sql.Timestamp;
+
+import java.time.LocalDate;
 
 @Entity
-@Table(name = "User")
+@Table(name = "Customer")
 @Setter
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserEntity {
+public class CustomerEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
+    private String gender;
     private String email;
-    private String password;
-    private String role;
-    private Timestamp lastLogin;
-    private Timestamp initialLogin;
+    private String phoneNo;
+    private LocalDate dob;
+    private LocalDate joinedDate;
+    private String loyaltyTier;
 }

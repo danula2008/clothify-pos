@@ -5,22 +5,24 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
 import java.sql.Timestamp;
 
 @Entity
-@Table(name = "User")
+@Table(name = "Order")
 @Setter
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserEntity {
+public class OrderEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private String name;
-    private String email;
-    private String password;
-    private String role;
-    private Timestamp lastLogin;
-    private Timestamp initialLogin;
+    private Integer CustId;
+    private Integer EmpId;
+    private Timestamp dateTime;
+    private String paymentType;
+    private Double totalDiscount;
+    private Double totalCost;
+    private String returnStatus;
 }

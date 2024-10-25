@@ -1,11 +1,13 @@
 package icet.edu.erp.service.custom.impl;
 
-import com.jfoenix.controls.JFXTextField;
-import icet.edu.erp.dto.Employee;
+import icet.edu.erp.dao.DaoFactory;
+import icet.edu.erp.dao.custom.UserDao;
 import icet.edu.erp.dto.User;
+import icet.edu.erp.entity.UserEntity;
 import icet.edu.erp.service.custom.UserService;
+import icet.edu.erp.util.DaoType;
 import javafx.collections.ObservableList;
-import javafx.scene.control.TextField;
+import org.modelmapper.ModelMapper;
 
 import java.sql.SQLIntegrityConstraintViolationException;
 
@@ -17,8 +19,11 @@ public class UserServiceImpl implements UserService {
         return instance==null? instance = new UserServiceImpl() : instance;
     }
 
+    private final UserDao repository = DaoFactory.getInstance().getDaoType(DaoType.USER);
+    private final ModelMapper mapper = new ModelMapper();
+
     public boolean validateLogin(String email, String password){
-        return true;
+        return repository.getItemByEmail(email).getPassword().equals(password);
     }
 
     @Override
@@ -28,42 +33,37 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public boolean isEmailInSystem(String text) {
-        return true;
+    public boolean isEmailInSystem(String email) {
+        return repository.getItemByEmail(email) != null;
     }
 
     @Override
-    public Integer getId(JFXTextField txtUserEmail) {
-        return null;
-    }
-
-    @Override
-    public Employee getEmployee(JFXTextField txtUserEmail) {
-        return null;
+    public Integer getUserId(String email) {
+        return repository.getItemByEmail(email).getId();
     }
 
     @Override
     public String getEmail(Integer userId) {
-        return null;
+        return repository.getItem(userId).getEmail();
     }
 
     @Override
     public boolean deleteUser(Integer id) {
-        return false;
+        return repository.delete(id);
     }
 
     @Override
     public ObservableList<User> getAllCustomers() {
-        return null;
+        return (ObservableList<User>) repository.findAll().stream().map(userEntity -> mapper.map(userEntity, User.class)).toList();
     }
 
     @Override
     public boolean addUser(User user) throws SQLIntegrityConstraintViolationException {
-        return false;
+        return repository.save(mapper.map(user, UserEntity.class));
     }
 
     @Override
-    public void updatePassword(Integer id, TextField textField) {
-        return;
+    public boolean updatePassword(Integer id, String newPwd) {
+        return repository.updatePassword(id, newPwd);
     }
 }

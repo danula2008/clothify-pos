@@ -7,7 +7,7 @@ public interface CrudRepository<T> extends SuperDao{
     boolean save(T entity) throws SQLIntegrityConstraintViolationException;
     boolean update(T entity) throws SQLIntegrityConstraintViolationException;
     List<T> findAll();
-    boolean delete(String id);
-    List<String> getIDs();
-    T getItem(String id);
+    boolean delete(Integer id);
+    List<Integer> getIDs();
+    T getItem(Integer id);
 }

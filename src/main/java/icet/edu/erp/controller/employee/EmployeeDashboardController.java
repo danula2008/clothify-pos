@@ -201,7 +201,7 @@ public class EmployeeDashboardController implements Initializable {
     }
 
     private void loadData(){
-        employeeList = service.getAll();
+        employeeList = service.getAllEmployees();
         tblEmployee.setItems(employeeList);
     }
 }

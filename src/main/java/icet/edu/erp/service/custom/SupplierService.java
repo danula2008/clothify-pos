@@ -9,7 +9,8 @@ import java.sql.SQLIntegrityConstraintViolationException;
 public interface SupplierService extends SuperService {
     boolean deleteSupplier(Integer id);
     ObservableList<Supplier> getAllCustomers();
-    Integer getId(JFXTextField txtSupplierId);
-    Supplier getSupplier(JFXTextField txtProductId);
+    Supplier getSupplier(Integer supplierId);
     boolean addSupplier(Supplier supplier) throws SQLIntegrityConstraintViolationException;
+    boolean hasId(int supplierId);
+    boolean updateSupplier(Supplier supplier) throws SQLIntegrityConstraintViolationException;
 }

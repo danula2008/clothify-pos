@@ -1,5 +1,5 @@
 package icet.edu.erp.controller.user;
-;
+
 import icet.edu.erp.dto.User;
 import icet.edu.erp.service.ServiceFactory;
 import icet.edu.erp.service.custom.UserService;

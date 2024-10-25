@@ -96,6 +96,7 @@ public class MainDashboardFormController implements Initializable {
             btn.setStyle("-fx-text-fill: white; -fx-background-color: #1230AE;");
         } catch (IOException e) {
             ShowAlert.fileNotFoundError();
+            throw new RuntimeException(e);
         }
     }
 }

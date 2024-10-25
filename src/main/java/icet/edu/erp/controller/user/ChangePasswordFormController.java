@@ -6,11 +6,20 @@ import icet.edu.erp.dto.User;
 import icet.edu.erp.service.ServiceFactory;
 import icet.edu.erp.service.custom.UserService;
 import icet.edu.erp.util.ServiceType;
+import icet.edu.erp.util.ShowAlert;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
+
+import java.io.IOException;
+import java.sql.SQLIntegrityConstraintViolationException;
+import java.util.Arrays;
 
 public class ChangePasswordFormController {
 
@@ -94,7 +103,23 @@ public class ChangePasswordFormController {
             return;
         }
 
-        ((UserService) ServiceFactory.getInstance().getServiceType(ServiceType.USER)).updatePassword(user.getId(), showPassword? txtNewPwd : pwdNewPwd);
+        if (((UserService) ServiceFactory.getInstance().getServiceType(ServiceType.USER)).updatePassword(user.getId(), showPassword? txtNewPwd.getText() : pwdNewPwd.getText())) {
+            ShowAlert.customAlert("Success", "Successfully updated the Database.\nPlease reload the table.", Alert.AlertType.INFORMATION);
+
+            try {
+                Stage stage = new Stage();
+                stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/main_dashboard.fxml"))));
+                stage.setResizable(false);
+                stage.setMaximized(true);
+                stage.show();
+            } catch (IOException e) {
+                ShowAlert.fileNotFoundError();
+            }
+            Stage stage = (Stage) txtOldPwd.getScene().getWindow();
+            stage.close();
+        } else {
+            ShowAlert.customAlert("Error", "Could not update the Database.\nPlease reload the table.", Alert.AlertType.ERROR);
+        }
     }
 
     @FXML

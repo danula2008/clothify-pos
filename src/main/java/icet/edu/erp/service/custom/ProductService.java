@@ -8,9 +8,10 @@ import javafx.collections.ObservableList;
 import java.sql.SQLIntegrityConstraintViolationException;
 
 public interface ProductService extends SuperService {
-    Product getProduct(JFXTextField txtProductId);
-    Integer getId(JFXTextField txtProductId);
+    Product getProduct(Integer txtProductId);
     ObservableList<Product> getAllCustomers();
     boolean addProduct(Product product) throws SQLIntegrityConstraintViolationException;
     boolean deleteProduct(Integer id);
+    boolean updateProduct(Product product) throws SQLIntegrityConstraintViolationException;
+    boolean hasId(Integer productId);
 }

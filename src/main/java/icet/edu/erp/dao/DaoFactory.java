@@ -1,6 +1,6 @@
 package icet.edu.erp.dao;
 
-import icet.edu.erp.dao.custom.impl.UserDaoImpl;
+import icet.edu.erp.dao.custom.impl.*;
 import icet.edu.erp.util.DaoType;
 
 public class DaoFactory {
@@ -13,12 +13,12 @@ public class DaoFactory {
 
     public <T extends SuperDao>T getDaoType(DaoType type){
         return (T) switch (type){
-            case CUSTOMER -> null;
-            case EMPLOYEE -> null;
-            case INVENTORY -> null;
-            case ORDER -> null;
-            case PRODUCT -> null;
-            case SUPPLIER -> null;
+            case CUSTOMER -> CustomerDaoImpl.getInstance();
+            case EMPLOYEE -> EmployeeDaoImpl.getInstance();
+            case INVENTORY -> InventoryDaoImpl.getInstance();
+            case ORDER -> OrderDaoImpl.getInstance();
+            case PRODUCT -> ProductDaoImpl.getInstance();
+            case SUPPLIER -> SupplierDaoImpl.getInstance();
             case USER -> UserDaoImpl.getInstance();
         };
     }

@@ -15,7 +15,7 @@ public class ServiceFactory {
             case CUSTOMER -> CustomerServiceImpl.getInstance();
             case EMPLOYEE -> EmployeeServiceImpl.getInstance();
             case INVENTORY -> InventoryServiceImpl.getInstance();
-            case ORDER -> null;
+            case ORDER -> OrderServiceImpl.getInstance();
             case PRODUCT -> ProductServiceImpl.getInstance();
             case SUPPLIER -> SupplierServiceImpl.getInstance();
             case USER -> UserServiceImpl.getInstance();

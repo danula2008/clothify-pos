@@ -49,17 +49,18 @@ public class SupplierDataFormController {
             return;
         }
 
+        Supplier supplier = new Supplier(
+                isAdd ? null : id,
+                txtName.getText(),
+                txtCompany.getText(),
+                txtEmail.getText(),
+                txtContact.getText(),
+                0.0,
+                LocalDate.now()
+        );
+
         try {
-            if (service.addSupplier(new Supplier(
-                            isAdd ? null : id,
-                            txtName.getText(),
-                            txtCompany.getText(),
-                            txtEmail.getText(),
-                            txtContact.getText(),
-                    0.0,
-                            LocalDate.now()
-                    )
-            )) {
+            if (isAdd? service.addSupplier(supplier) : service.updateSupplier(supplier)) {
                 ShowAlert.customAlert("Success", "Successfully updated the Database.\nPlease reload the table.", Alert.AlertType.INFORMATION);
 
                 if (isAdd) {
@@ -111,6 +112,4 @@ public class SupplierDataFormController {
         txtCompany.setText(selectedData.getCompany());
         txtContact.setText(selectedData.getContact());
     }
-
-
 }
