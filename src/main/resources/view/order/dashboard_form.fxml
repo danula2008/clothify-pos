@@ -20,7 +20,7 @@
          <top>
             <Group BorderPane.alignment="CENTER">
                <children>
-                  <Label prefHeight="35.0" prefWidth="125.0" text="Supplier" textFill="#6a6a6a">
+                  <Label prefHeight="35.0" prefWidth="125.0" text="Order" textFill="#6a6a6a">
                      <font>
                         <Font name="Poppins SemiBold" size="24.0" />
                      </font>
@@ -51,68 +51,18 @@
                         </ImageView>
                      </children>
                   </Group>
-                  <HBox alignment="TOP_RIGHT" layoutX="686.0" prefHeight="40.0" prefWidth="432.0" spacing="15.0">
+                  <HBox fx:id="selectedView" alignment="TOP_RIGHT" layoutX="686.0" prefHeight="40.0" prefWidth="432.0" spacing="15.0">
                      <children>
-                        <Group fx:id="grpSelectedActions">
-                           <children>
-                              <HBox spacing="15.0">
-                                 <children>
-                                    <Group>
-                                       <children>
-                                          <JFXButton onAction="#btnViewProductsOnAction" prefHeight="40.0" prefWidth="120.0" style="-fx-border-radius: 40; -fx-border-color: #8946A6; -fx-background-radius: 40;" text="         Products" textFill="#6a6a6a">
-                                             <font>
-                                                <Font name="Poppins SemiBold" size="14.0" />
-                                             </font>
-                                          </JFXButton>
-                                          <ImageView fitHeight="22.0" fitWidth="22.0" layoutX="15.0" layoutY="8.0" onMouseClicked="#btnEditOnMouseClick" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../../img/products.png" />
-                                             </image>
-                                          </ImageView>
-                                       </children>
-                                    </Group>
-                                    <Group>
-                                       <children>
-                                          <JFXButton onAction="#btnEditOnAction" prefHeight="40.0" prefWidth="100.0" style="-fx-border-radius: 40; -fx-border-color: #8946A6; -fx-background-radius: 40;" text="      Edit" textFill="#6a6a6a">
-                                             <font>
-                                                <Font name="Poppins SemiBold" size="14.0" />
-                                             </font>
-                                          </JFXButton>
-                                          <ImageView fitHeight="22.0" fitWidth="22.0" layoutX="26.0" layoutY="7.0" onMouseClicked="#btnEditOnMouseClick" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../../img/edit.png" />
-                                             </image>
-                                          </ImageView>
-                                       </children>
-                                    </Group>
-                                    <Group>
-                                       <children>
-                                          <JFXButton layoutX="3.0" layoutY="2.0" onAction="#btnDeleteOnAction" prefHeight="40.0" prefWidth="100.0" style="-fx-border-radius: 40; -fx-border-color: #8946A6; -fx-background-radius: 40;" text="       Delete" textFill="#6a6a6a">
-                                             <font>
-                                                <Font name="Poppins SemiBold" size="14.0" />
-                                             </font>
-                                          </JFXButton>
-                                          <ImageView fitHeight="22.0" fitWidth="22.0" layoutX="18.0" layoutY="10.0" onMouseClicked="#btnDeleteOnMouseClick" pickOnBounds="true" preserveRatio="true">
-                                             <image>
-                                                <Image url="@../../img/delete.png" />
-                                             </image>
-                                          </ImageView>
-                                       </children>
-                                    </Group>
-                                 </children>
-                              </HBox>
-                           </children>
-                        </Group>
                         <Group>
                            <children>
-                              <JFXButton onAction="#btnAddOnAction" prefHeight="40.0" prefWidth="100.0" style="-fx-border-radius: 40; -fx-border-color: #8946A6; -fx-background-color: #8946A6; -fx-background-radius: 40;" text="       Add" textFill="WHITE">
+                              <JFXButton onAction="#btnViewProductsOnAction" prefHeight="40.0" prefWidth="120.0" style="-fx-border-radius: 40; -fx-border-color: #8946A6; -fx-background-radius: 40;" text="         Items" textFill="#6a6a6a">
                                  <font>
                                     <Font name="Poppins SemiBold" size="14.0" />
                                  </font>
                               </JFXButton>
-                              <ImageView fitHeight="22.0" fitWidth="22.0" layoutX="21.0" layoutY="9.0" onMouseClicked="#btnEditOnMouseClick" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fitHeight="22.0" fitWidth="22.0" layoutX="15.0" layoutY="8.0" onMouseClicked="#btnEditOnMouseClick" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../img/plus.png" />
+                                    <Image url="@../../img/products.png" />
                                  </image>
                               </ImageView>
                            </children>
@@ -126,15 +76,16 @@
             </Group>
          </top>
          <center>
-            <TableView fx:id="tblSupplier" prefHeight="570.0" prefWidth="1154.0" BorderPane.alignment="CENTER">
+            <TableView fx:id="tblOrder" prefHeight="570.0" prefWidth="1154.0" BorderPane.alignment="CENTER">
               <columns>
-                <TableColumn fx:id="colId" editable="false" prefWidth="73.8666558265686" resizable="false" styleClass="table-row-cell" text="ID" />
-                <TableColumn fx:id="colName" editable="false" prefWidth="210.40007781982422" resizable="false" styleClass="table-row-cell" text="NAME" />
-                  <TableColumn fx:id="colCompany" editable="false" prefWidth="155.199951171875" resizable="false" styleClass="table-row-cell" text="COMPANY" />
-                  <TableColumn fx:id="colEmail" editable="false" prefWidth="180.80001831054688" resizable="false" styleClass="table-row-cell" text="EMAIL" />
-                  <TableColumn fx:id="colContact" editable="false" prefWidth="177.86669921875" resizable="false" styleClass="table-row-cell" text="CONTACT NO." />
-                  <TableColumn fx:id="colPendingPayment" editable="false" prefWidth="166.39996337890625" resizable="false" styleClass="table-row-cell" text="PENDING PAYMENTS" />
-                  <TableColumn fx:id="colLastOrderDate" editable="false" prefWidth="182.40008544921875" resizable="false" styleClass="table-row-cell" text="LAST ORDER DATE" />
+                <TableColumn fx:id="colId" editable="false" prefWidth="98.9333062171936" resizable="false" styleClass="table-row-cell" text="ID" />
+                <TableColumn fx:id="colCustId" editable="false" prefWidth="145.86666107177734" resizable="false" styleClass="table-row-cell" text="CUS. ID" />
+                  <TableColumn fx:id="colEmpId" editable="false" prefWidth="130.39999389648438" resizable="false" styleClass="table-row-cell" text="EMP. ID" />
+                  <TableColumn fx:id="colTimeStamp" editable="false" prefWidth="185.86663818359375" resizable="false" styleClass="table-row-cell" text="TIMESTAMP" />
+                  <TableColumn fx:id="colPaymentType" editable="false" prefWidth="143.99993896484375" resizable="false" styleClass="table-row-cell" text="PAYMENT TYPE" />
+                  <TableColumn fx:id="colTotDisc" editable="false" prefWidth="138.666748046875" resizable="false" styleClass="table-row-cell" text="TOT. DISCOUNT" />
+                  <TableColumn fx:id="colTotCost" editable="false" prefWidth="145.33331298828125" resizable="false" styleClass="table-row-cell" text="TOT. COST" />
+                  <TableColumn fx:id="colReturnStatus" editable="false" prefWidth="158.9334716796875" resizable="false" styleClass="table-row-cell" text="RETURN STATUS" />
               </columns>
                <BorderPane.margin>
                   <Insets bottom="20.0" left="50.0" right="50.0" top="10.0" />

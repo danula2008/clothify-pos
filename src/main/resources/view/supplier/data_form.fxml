@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="500.0" prefWidth="400.0" style="-fx-background-color: white;" stylesheets="@../../css/btn_hover.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="icet.edu.erp.controller.supplier.AddSupplierFormController">
+<AnchorPane prefHeight="500.0" prefWidth="400.0" style="-fx-background-color: white;" stylesheets="@../../css/btn_hover.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="icet.edu.erp.controller.supplier.SupplierDataFormController">
    <children>
       <Label fx:id="lblTitle" layoutX="155.0" layoutY="27.0" text="Add Supplier">
          <font>

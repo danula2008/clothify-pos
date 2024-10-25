@@ -1,6 +1,6 @@
 package icet.edu.erp.service;
 
-import icet.edu.erp.service.custom.impl.UserServiceImpl;
+import icet.edu.erp.service.custom.impl.*;
 import icet.edu.erp.util.ServiceType;
 
 public class ServiceFactory {
@@ -12,12 +12,12 @@ public class ServiceFactory {
 
     public <T extends SuperService>T getServiceType(ServiceType type){
         return (T) switch (type){
-            case CUSTOMER -> null;
-            case EMPLOYEE -> null;
-            case INVENTORY -> null;
+            case CUSTOMER -> CustomerServiceImpl.getInstance();
+            case EMPLOYEE -> EmployeeServiceImpl.getInstance();
+            case INVENTORY -> InventoryServiceImpl.getInstance();
             case ORDER -> null;
-            case PRODUCT -> null;
-            case SUPPLIER -> null;
+            case PRODUCT -> ProductServiceImpl.getInstance();
+            case SUPPLIER -> SupplierServiceImpl.getInstance();
             case USER -> UserServiceImpl.getInstance();
         };
     }

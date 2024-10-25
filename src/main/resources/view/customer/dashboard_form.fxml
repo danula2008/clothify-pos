@@ -57,12 +57,12 @@
                            <children>
                               <Group>
                                  <children>
-                                    <JFXButton fx:id="btnDelete" layoutX="3.0" layoutY="2.0" onAction="#btnDeleteOnAction" prefHeight="40.0" prefWidth="100.0" style="-fx-border-radius: 40; -fx-border-color: #8946A6; -fx-background-radius: 40;" text="       Delete" textFill="#6a6a6a">
+                                    <JFXButton layoutX="3.0" layoutY="2.0" onAction="#btnDeleteOnAction" prefHeight="40.0" prefWidth="100.0" style="-fx-border-radius: 40; -fx-border-color: #8946A6; -fx-background-radius: 40;" text="       Delete" textFill="#6a6a6a">
                                        <font>
                                           <Font name="Poppins SemiBold" size="14.0" />
                                        </font>
                                     </JFXButton>
-                                    <ImageView fx:id="imgDelete" fitHeight="22.0" fitWidth="22.0" layoutX="18.0" layoutY="10.0" onMouseClicked="#btnDeleteOnMouseClick" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fitHeight="22.0" fitWidth="22.0" layoutX="18.0" layoutY="10.0" onMouseClicked="#btnDeleteOnMouseClick" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../../img/delete.png" />
                                        </image>
@@ -71,12 +71,12 @@
                               </Group>
                               <Group layoutX="115.20000147819519">
                                  <children>
-                                    <JFXButton fx:id="btnEdit" onAction="#btnEditOnAction" prefHeight="40.0" prefWidth="100.0" style="-fx-border-radius: 40; -fx-border-color: #8946A6; -fx-background-radius: 40;" text="      Edit" textFill="#6a6a6a">
+                                    <JFXButton onAction="#btnEditOnAction" prefHeight="40.0" prefWidth="100.0" style="-fx-border-radius: 40; -fx-border-color: #8946A6; -fx-background-radius: 40;" text="      Edit" textFill="#6a6a6a">
                                        <font>
                                           <Font name="Poppins SemiBold" size="14.0" />
                                        </font>
                                     </JFXButton>
-                                    <ImageView fx:id="imgEdit" fitHeight="22.0" fitWidth="22.0" layoutX="26.0" layoutY="7.0" onMouseClicked="#btnEditOnMouseClick" pickOnBounds="true" preserveRatio="true">
+                                    <ImageView fitHeight="22.0" fitWidth="22.0" layoutX="26.0" layoutY="7.0" onMouseClicked="#btnEditOnMouseClick" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../../img/edit.png" />
                                        </image>

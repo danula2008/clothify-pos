@@ -10,9 +10,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.net.URL;
 import java.util.Arrays;
 import java.util.ResourceBundle;
@@ -88,7 +86,7 @@ public class MainDashboardFormController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        loadToAnchorPane("product", btnProducts);
+        loadToAnchorPane("customer", btnCustomers);
     }
 
     private void loadToAnchorPane(String location, JFXButton btn) {

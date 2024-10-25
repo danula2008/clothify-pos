@@ -34,7 +34,7 @@ public class OtpEmailFormController {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/user/otp_form.fxml"));
                 Scene scene = new Scene(loader.load());
                 OtpFormController controller = loader.getController();
-                controller.setOTP(service.sendOTP(txtEmailAddress.getText().toLowerCase()));
+                controller.setData(txtEmailAddress.getText().toLowerCase(), service.sendOTP(txtEmailAddress.getText().toLowerCase()));
 
                 Stage stage = new Stage();
                 stage.setScene(scene);

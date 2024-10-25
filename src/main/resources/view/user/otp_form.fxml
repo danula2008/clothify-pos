@@ -26,7 +26,7 @@
             <Image url="@../../img/logo_icon.png" />
          </image>
       </ImageView>
-      <JFXButton fx:id="btnDone" layoutX="75.0" layoutY="367.0" onAction="#btnDoneOnAction" prefHeight="35.0" prefWidth="200.0" style="-fx-background-color: #1230AE;" text="Done" textFill="WHITE">
+      <JFXButton layoutX="75.0" layoutY="367.0" onAction="#btnDoneOnAction" prefHeight="35.0" prefWidth="200.0" style="-fx-background-color: #1230AE;" text="Done" textFill="WHITE">
          <font>
             <Font name="Poppins Medium" size="14.0" />
          </font>
@@ -89,10 +89,5 @@
             </Label>
          </children>
       </HBox>
-      <Label fx:id="lblInvalidOtp" alignment="TOP_CENTER" layoutX="79.0" layoutY="323.0" prefHeight="18.0" prefWidth="194.0" text="Invalid OTP Entered." textFill="RED" visible="false">
-         <font>
-            <Font name="Poppins Regular" size="14.0" />
-         </font>
-      </Label>
    </children>
 </AnchorPane>

@@ -1,6 +1,5 @@
 package icet.edu.erp.controller.user;
 
-import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
 import icet.edu.erp.util.ShowAlert;
 import javafx.animation.Animation;
@@ -24,16 +23,10 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class OtpFormController implements Initializable {
 
     @FXML
-    private JFXButton btnDone;
-
-    @FXML
     private Label lblCountdown;
 
     @FXML
     private Label lblEmailAddress;
-
-    @FXML
-    private Label lblInvalidOtp;
 
     @FXML
     private JFXTextField txtOtpChar1;
@@ -136,7 +129,8 @@ public class OtpFormController implements Initializable {
         }
     }
 
-    void setOTP(String otp){
+    void setData(String email, String otp){
         this.otp = otp;
+        lblEmailAddress.setText(email);
     }
 }

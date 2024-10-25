@@ -111,12 +111,11 @@
             <TableView fx:id="tblProduct" prefHeight="570.0" prefWidth="1154.0" BorderPane.alignment="CENTER">
               <columns>
                 <TableColumn fx:id="colId" editable="false" prefWidth="73.8666558265686" resizable="false" styleClass="table-row-cell" text="ID" />
-                  <TableColumn fx:id="colImage" editable="false" prefWidth="208.80010986328125" resizable="false" styleClass="table-row-cell" text="IMAGE" />
                 <TableColumn fx:id="colName" editable="false" prefWidth="260.8000183105469" resizable="false" styleClass="table-row-cell" text="NAME" />
-                  <TableColumn fx:id="colCategory" editable="false" prefWidth="138.4000244140625" resizable="false" styleClass="table-row-cell" text="CATEGORY" />
-                  <TableColumn fx:id="colBrand" editable="false" prefWidth="176.8001708984375" resizable="false" styleClass="table-row-cell" text="BRAND" />
-                  <TableColumn fx:id="colSize" editable="false" prefWidth="140.79998779296875" resizable="false" styleClass="table-row-cell" text="SIZE" />
-                  <TableColumn fx:id="colDiscount" editable="false" prefWidth="158.39990234375" resizable="false" styleClass="table-row-cell" text="DISCOUNT" />
+                  <TableColumn fx:id="colCategory" editable="false" prefWidth="203.19989013671875" resizable="false" styleClass="table-row-cell" text="CATEGORY" />
+                  <TableColumn fx:id="colBrand" editable="false" prefWidth="202.40008544921875" resizable="false" styleClass="table-row-cell" text="BRAND" />
+                  <TableColumn fx:id="colSize" editable="false" prefWidth="189.86669921875" resizable="false" styleClass="table-row-cell" text="SIZE" />
+                  <TableColumn fx:id="colDiscount" editable="false" prefWidth="211.20001220703125" resizable="false" styleClass="table-row-cell" text="DISCOUNT" />
               </columns>
                <BorderPane.margin>
                   <Insets bottom="20.0" left="50.0" right="50.0" top="10.0" />

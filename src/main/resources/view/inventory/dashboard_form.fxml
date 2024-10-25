@@ -110,14 +110,12 @@
          <center>
             <TableView fx:id="tblInventory" prefHeight="570.0" prefWidth="1154.0" BorderPane.alignment="CENTER">
               <columns>
-                <TableColumn fx:id="colId" editable="false" prefWidth="73.8666558265686" resizable="false" styleClass="table-row-cell" text="ID" />
-                <TableColumn fx:id="colProductId" editable="false" prefWidth="101.8667221069336" resizable="false" styleClass="table-row-cell" text="PRODUCT ID" />
-                  <TableColumn fx:id="colProductName" editable="false" prefWidth="234.3999481201172" resizable="false" styleClass="table-row-cell" text="PRODUCT NAME" />
-                  <TableColumn fx:id="colSupplierId" editable="false" prefWidth="98.93325805664062" resizable="false" styleClass="table-row-cell" text="SUPPLIER ID" />
-                  <TableColumn fx:id="colSupplierName" editable="false" prefWidth="235.46676635742188" resizable="false" styleClass="table-row-cell" text="SUPPLIER NAME" />
-                  <TableColumn fx:id="colSellingPrice" editable="false" prefWidth="199.99981689453125" resizable="false" styleClass="table-row-cell" text="SELLING PRICE" />
-                  <TableColumn fx:id="colInventoryPrice" editable="false" prefWidth="208.80010986328125" resizable="false" styleClass="table-row-cell" text="INVENTORY PRICE" />
-                  <TableColumn fx:id="colDob" editable="false" prefWidth="128.533447265625" resizable="false" styleClass="table-row-cell" text="QTY. ON HAND" />
+                <TableColumn fx:id="colId" editable="false" prefWidth="145.86666345596313" resizable="false" styleClass="table-row-cell" text="ID" />
+                <TableColumn fx:id="colProductId" editable="false" prefWidth="194.6666717529297" resizable="false" styleClass="table-row-cell" text="PRODUCT ID" />
+                  <TableColumn fx:id="colSupplierId" editable="false" prefWidth="199.7332763671875" resizable="false" styleClass="table-row-cell" text="SUPPLIER ID" />
+                  <TableColumn fx:id="colSellingPrice" editable="false" prefWidth="215.73345947265625" resizable="false" styleClass="table-row-cell" text="SELLING PRICE" />
+                  <TableColumn fx:id="colInventoryPrice" editable="false" prefWidth="197.06671142578125" resizable="false" styleClass="table-row-cell" text="INVENTORY PRICE" />
+                  <TableColumn fx:id="colQtyOnHand" editable="false" prefWidth="199.199951171875" resizable="false" styleClass="table-row-cell" text="QTY. ON HAND" />
               </columns>
                <BorderPane.margin>
                   <Insets bottom="20.0" left="50.0" right="50.0" top="10.0" />
