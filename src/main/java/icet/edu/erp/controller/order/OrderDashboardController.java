@@ -34,7 +34,7 @@ public class OrderDashboardController implements Initializable {
     private TableColumn<String, Order> colPaymentType;
 
     @FXML
-    private TableColumn<String, Order> colReturnStatus;
+    private TableColumn<Double, Order> colNetTotal;
 
     @FXML
     private TableColumn<Timestamp, Order> colTimeStamp;
@@ -105,10 +105,10 @@ public class OrderDashboardController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         TableColumn<?, ?>[] cols = new TableColumn<?, ?>[] {
-                colId, colCustId, colEmpId, colTimeStamp, colPaymentType, colTotDisc, colTotCost, colReturnStatus
+                colId, colCustId, colEmpId, colTimeStamp, colPaymentType, colTotDisc, colTotCost, colNetTotal
         };
         String[] colNames = new String[] {
-                "id", "custId", "empId", "dateTime", "paymentType", "totalDiscount", "totalCost", "returnStatus"
+                "id", "custId", "empId", "dateTime", "paymentType", "totalDiscount", "totalCost", "netTotal"
         };
         for (int i = 0; i < cols.length; i++) {
             cols[i].setCellValueFactory(new PropertyValueFactory<>(colNames[i]));

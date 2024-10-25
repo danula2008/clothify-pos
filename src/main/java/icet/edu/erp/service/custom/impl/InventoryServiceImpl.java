@@ -41,4 +41,9 @@ public class InventoryServiceImpl implements InventoryService {
     public boolean updateInventory(Inventory inventory) throws SQLIntegrityConstraintViolationException {
         return repository.update(mapper.map(inventory, InventoryEntity.class));
     }
+
+    @Override
+    public Inventory getInventoryByProductId(Integer id) {
+        return mapper.map(repository.findByProductId(id), Inventory.class);
+    }
 }

@@ -49,4 +49,9 @@ public class CustomerServiceImpl implements CustomerService {
     public boolean updateCustomer(Customer customer) throws SQLIntegrityConstraintViolationException {
         return repository.update(mapper.map(customer, CustomerEntity.class));
     }
+
+    @Override
+    public Customer getCustomer(Integer id) {
+        return mapper.map(repository.getItem(id), Customer.class);
+    }
 }

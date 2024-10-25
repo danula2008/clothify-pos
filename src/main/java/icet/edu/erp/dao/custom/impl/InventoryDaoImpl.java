@@ -116,4 +116,25 @@ public class InventoryDaoImpl implements InventoryDao {
         }
         return null;
     }
+
+    @Override
+    public InventoryEntity findByProductId(Integer id) {
+        String sql = "SELECT * FROM Inventory WHERE productId = ?";
+        try {
+            ResultSet resultSet = CrudUtil.execute(sql, id);
+            if (resultSet.next()) {
+                return new InventoryEntity(
+                        resultSet.getInt("id"),
+                        resultSet.getInt("productId"),
+                        resultSet.getInt("supplierId"),
+                        resultSet.getDouble("sellingPrice"),
+                        resultSet.getDouble("inventoryPrice"),
+                        resultSet.getInt("qtyOnHand")
+                );
+            }
+        } catch (SQLException e) {
+            ShowAlert.databaseError();
+        }
+        return null;
+    }
 }

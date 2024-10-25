@@ -73,13 +73,13 @@ public class EmployeeDataFormController implements Initializable {
 
     @FXML
     void btnDoneOnAction(ActionEvent event) {
-        if (!validate() || userService.getId(txtUserEmail)==-1) {
+        if (!validate() || userService.isEmailInSystem(txtUserEmail.getText())) {
             return;
         }
 
         Employee employee = new Employee(
                 isAdd ? null : id,
-                userService.getId(txtUserEmail),
+                userService.getUserId(txtUserEmail.getText()),
                 cmbGender.getValue(),
                 txtContact.getText(),
                 dateHireDate.getValue(),

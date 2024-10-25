@@ -7,11 +7,14 @@ import icet.edu.erp.entity.ProductEntity;
 import icet.edu.erp.service.custom.ProductService;
 import icet.edu.erp.util.DaoType;
 import javafx.collections.ObservableList;
+import org.hibernate.cache.spi.support.AbstractReadWriteAccess;
 import org.modelmapper.ModelMapper;
 
 import java.sql.SQLIntegrityConstraintViolationException;
 
-public class ProductServiceImpl implements ProductService {
+public class ProductServiceImpl implements ProductService
+
+{
     private static ProductServiceImpl instance;
     private ProductServiceImpl(){}
     public static ProductServiceImpl getInstance(){

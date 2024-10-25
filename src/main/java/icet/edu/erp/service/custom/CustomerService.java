@@ -12,5 +12,6 @@ public interface CustomerService extends SuperService {
     LocalDate getDate(Integer id);
     boolean addCustomer(Customer customer) throws SQLIntegrityConstraintViolationException;
     boolean updateCustomer(Customer customer) throws SQLIntegrityConstraintViolationException;
+    Customer getCustomer(Integer id);
 }
 

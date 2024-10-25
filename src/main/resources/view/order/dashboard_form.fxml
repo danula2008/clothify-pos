@@ -83,9 +83,9 @@
                   <TableColumn fx:id="colEmpId" editable="false" prefWidth="130.39999389648438" resizable="false" styleClass="table-row-cell" text="EMP. ID" />
                   <TableColumn fx:id="colTimeStamp" editable="false" prefWidth="185.86663818359375" resizable="false" styleClass="table-row-cell" text="TIMESTAMP" />
                   <TableColumn fx:id="colPaymentType" editable="false" prefWidth="143.99993896484375" resizable="false" styleClass="table-row-cell" text="PAYMENT TYPE" />
+                  <TableColumn fx:id="colNetTotal" editable="false" prefWidth="158.9334716796875" resizable="false" styleClass="table-row-cell" text="COL NET TOTAL" />
                   <TableColumn fx:id="colTotDisc" editable="false" prefWidth="138.666748046875" resizable="false" styleClass="table-row-cell" text="TOT. DISCOUNT" />
-                  <TableColumn fx:id="colTotCost" editable="false" prefWidth="145.33331298828125" resizable="false" styleClass="table-row-cell" text="TOT. COST" />
-                  <TableColumn fx:id="colReturnStatus" editable="false" prefWidth="158.9334716796875" resizable="false" styleClass="table-row-cell" text="RETURN STATUS" />
+                  <TableColumn fx:id="colTotCost" editable="false" prefWidth="136.0" resizable="false" styleClass="table-row-cell" text="TOT. COST" />
               </columns>
                <BorderPane.margin>
                   <Insets bottom="20.0" left="50.0" right="50.0" top="10.0" />

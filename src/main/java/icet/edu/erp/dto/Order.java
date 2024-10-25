@@ -16,7 +16,7 @@ public class Order {
     private Integer EmpId;
     private Timestamp dateTime;
     private String paymentType;
+    private Double netTotal;
     private Double totalDiscount;
     private Double totalCost;
-    private String returnStatus;
 }

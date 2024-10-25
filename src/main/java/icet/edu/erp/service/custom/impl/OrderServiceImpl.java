@@ -1,13 +1,14 @@
 package icet.edu.erp.service.custom.impl;
 
 import icet.edu.erp.dao.DaoFactory;
-import icet.edu.erp.dao.custom.InventoryDao;
 import icet.edu.erp.dao.custom.OrderDao;
 import icet.edu.erp.dto.Order;
 import icet.edu.erp.service.custom.OrderService;
 import icet.edu.erp.util.DaoType;
 import javafx.collections.ObservableList;
 import org.modelmapper.ModelMapper;
+
+import java.sql.SQLIntegrityConstraintViolationException;
 
 public class OrderServiceImpl implements OrderService {
     private static OrderServiceImpl instance;
@@ -22,5 +23,10 @@ public class OrderServiceImpl implements OrderService {
     @Override
     public ObservableList<Order> getAllCustomers() {
         return (ObservableList<Order>) repository.findAll().stream().map(orderEntity -> mapper.map(orderEntity, Order.class)).toList();
+    }
+
+    @Override
+    public boolean placeOrder(Order cash) throws SQLIntegrityConstraintViolationException {
+        return false;
     }
 }
